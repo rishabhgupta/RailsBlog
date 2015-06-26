@@ -2,7 +2,8 @@
   <div class="container" style="color:white;">
     <div class="row">
       <div class="col-sm-10">
-         <h6>User: <%= current_user.email %></h6> 
+         <h6>User: <%= link_to current_user.email, edit_user_registration_path, :method => :get, 
+         							style: "color:white;text-decoration: underline;" %></h6> 
       </div>
       <div class="col-sm-2">
         <p style="float:right;">

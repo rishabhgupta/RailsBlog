@@ -18,9 +18,9 @@
 	    <strong>Comment:</strong>
 	    <%= comment.body %>
 	  </p>
-	   <%= link_to 'Delete Comment', [comment.article, comment],
+	   <%= link_to 'Delete', [comment.article, comment],
              method: :delete,
-             class: "btn btn-danger",
+             style: 'font-size:12px',
              data: { confirm: 'Are you sure?' } %>
 	  <hr>
 	<% end %>
