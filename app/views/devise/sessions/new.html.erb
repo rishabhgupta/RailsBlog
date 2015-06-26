@@ -1,7 +1,11 @@
- <div class="jumbotron" style="background-color:#54BC90">
-  <div class="container">
+ <div class="jumbotron" style=" background-image: url('/assets/header_img.jpg'); ">
+  <div class="container" style="color:white;">
+    <div class="row">
+      <div class="col-sm-2">
+      </div>
+    </div>
     <h1>My Blog</h1> 
-     <p>Login</p> 
+    <p>Login / Sign Up</p>
   </div>
 </div>
 <div class="container">
@@ -28,7 +32,8 @@
           <%= f.submit "Log in", class: "btn btn-success" %>
         </div>
       <% end %>
-      <%= render "users/shared/links" %>
+      <br>
+      <%= render "devise/shared/links" %>
     </div>
     <div class="col-sm-8"></div>
   </div>
