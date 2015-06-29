@@ -1,0 +1,63 @@
+<% @page_title = "Article" %>
+<%= render 'application/nav'%>
+<%= render 'articles/header'%>
+    <p><%= @article.title %></p>
+  </div>
+</div>
+
+<div class="container">
+	<h4>Article:</h4>
+		<%= @article.text %>
+		<br>
+		<hr>
+		<h4>Comments</h4>
+	<% @article.comments.each do |comment| %>
+	  <p>
+	    <strong>Commenter:</strong>
+	    <%= comment.commenter %>
+	  </p>
+	 
+	  <p>
+	    <strong>Comment:</strong>
+	    <%= comment.body %>
+	  </p>
+    <% comment.responses.each do |response| %>		
+    	<div style="margin-left:50px;font-size:12px;margin-top:10px;border-left:1px solid #BFBFBF;padding-left:5px;color:gray;">
+		    <p>
+			    Commenter:
+			    <%= response.commenter %>
+			  </p>
+			 
+			  <p>
+			    Comment:
+			    <%= response.body %>
+			  </p>
+   		</div>
+    <% end %>
+	  <hr>
+	<% end %>
+</div>
+<% if current_user.id? %>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<h4>Add a comment:</h4>
+				<%= form_for([@article, @article.comments.build]) do |f| %>
+				  <p>
+				    <%= f.label :commenter %><br>
+				    <%= f.text_field :commenter , class: "form-control", :value => current_user.email, :readonly => true %>
+				  </p>
+				  <p>
+				    <%= f.label :body %><br>
+				    <%= f.text_area :body, class: "form-control" %>
+				  </p>
+				  <p>
+				    <%= f.submit class: "btn btn-default" %>
+				  </p>
+				<% end %>
+				<%= link_to 'Back', {:action => "index"} %>
+			</div>
+			<div class="col-sm-6"></div>
+		</div>
+	</div>
+<% end %>
