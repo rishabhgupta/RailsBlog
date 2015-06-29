@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :responses
   
   get 'welcome/index'
-
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -67,6 +67,7 @@ Rails.application.routes.draw do
   #   end
   devise_scope :user do
     delete "/logout" => "devise/sessions#destroy"
+    
   end
   match ':controller(/:action(/:id))', :via => [:get,:post]
 end
