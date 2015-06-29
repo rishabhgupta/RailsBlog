@@ -4,7 +4,7 @@ class UserDetailsController < ApplicationController
   end
 
   def edit
-  	@user = UserDetail.find(params[:id])
+  	@user = UserDetail.find_by_user_id(params[:id])
   end
 
   def update

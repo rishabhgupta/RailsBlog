@@ -1,10 +1,11 @@
 class ArticlesController < ApplicationController
 	before_filter :printer_hello
+	
 	def new
 		@article = Article.new
 	end
 	def index
-		@article = Article.all
+		@articles = Blog.find(session[:blog_id]).articles
 	end
 	def edit
 		@article = Article.find(params[:id])
@@ -15,8 +16,9 @@ class ArticlesController < ApplicationController
 
 	def create
 	 @article = Article.new(article_params)
+	 @blog = Blog.find(session[:blog_id])
 	 # @article.converter_uppercase
-	  	if @article.save
+	  	if @blog.articles << @article
 	    	redirect_to @article
 	  	else
 	    	render 'new'

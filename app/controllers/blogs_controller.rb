@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+	
   def new
   	@blog = Blog.new
   end
@@ -15,15 +16,15 @@ class BlogsController < ApplicationController
   end
 
   def show
-  	@blog = Blog.find(params[:id])
+  	@blog = Blog.find(session[:blog_id])
   end
 
   def edit
-  	@blog = Blog.find(params[:id])
+  	@blog = Blog.find(session[:blog_id])
   end
 
   def update
-	  @blog = Blog.find(params[:id])
+	  @blog = Blog.find(session[:blog_id])
 	 
 	  if @blog.update(blog_params)
 	    redirect_to({:action => 'show', :id => @blog.id})

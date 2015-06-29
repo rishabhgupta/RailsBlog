@@ -12,7 +12,7 @@
 							<% if current_user %>
 								<li><%= link_to("Profile", {:controller => "user_details", :action => "show", :id => current_user.id}) %>
 								</li>
-								<li><%= link_to("My Blog", {:controller => 'articles', :id => Blog.find_by_user_id(current_user.id).id}) %></li>
+								<li><%= link_to("My Blog", {:controller => 'articles'}) %></li>
 							<% end %>
 							<!--<li><a href="Account">Account</a></li>-->
 							<li class="dropdown">
