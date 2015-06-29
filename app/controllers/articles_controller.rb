@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_filter :printer_hello
+	# before_filter :printer_hello
 	
 	def new
 		@article = Article.new

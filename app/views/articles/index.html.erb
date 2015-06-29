@@ -1,6 +1,7 @@
 <% @page_title = "Article - Index" %>
 <%= render 'application/nav'%>
-<%= render 'header'%>
+<%= render 'blog_header'%>
+    <h1><%= Blog.find(session[:blog_id]).name %></h1> 
     <p>Article Index</p>
   </div>
 </div>

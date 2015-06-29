@@ -65,6 +65,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
   devise_scope :user do
     delete "/logout" => "devise/sessions#destroy"
     
