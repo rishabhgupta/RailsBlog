@@ -1,0 +1,53 @@
+<% @page_title = "Article" %>
+<%= render 'application/nav'%>
+<%= render 'articles/header'%>
+   	 <p>Update</p>
+  </div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<%=  form_for(:user, :url => {:action => 'update', :id => @user.id}) do |f| %>
+			  <% if @user.errors.any? %>
+			    <div id="error_explanation" class="alert alert-danger">
+			      <h4>
+			        <%= pluralize(@article.errors.count, "error") %> prohibited
+			        this user from being saved:
+			      </h4>
+			      <ul>
+			        <% @user.errors.full_messages.each do |msg| %>
+			          <li><%= msg %></li>
+			        <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+			 
+			  <p>
+			    <%= f.label :first_name %><br>
+			    <%= f.text_field :first_name, class: 'form-control' %>
+			  </p>
+			 
+			  <p>
+			    <%= f.label :last_name %><br>
+			    <%= f.text_field :last_name, class: 'form-control' %>
+			  </p>
+
+			  <p>
+			  	<%= f.label :username %><br>
+			  	<%= f.text_field :username, class: "form-control" %>
+			  </p>
+			 	<p>
+			    <%= f.label :age %><br>
+			    <%= f.text_field :age, class: 'form-control' %>
+			  </p>
+			  <p>
+			    <%= f.submit class: 'btn btn-success'%>
+			  </p>
+			 
+			<% end %>
+			<%= link_to("Back", {:action => 'show', :id =>@user.id}) %>
+		</div>
+		<div class="col-sm-8"></div>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">StageSpace</a>
+					</div>
+					<div>
+						<ul class="nav navbar-nav">
+							<li><%= link_to("Home", {:controller => 'welcome'}) %></li>
+							<li><%= link_to("Profile", {:controller => "user_details", :action => "show", :id => current_user.id}) %></li>
+							<!--<li><a href="Account">Account</a></li>-->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Submenu 1</a></li>
+									<li><a href="#">Submenu 2</a></li>
+									<li><a href="#">Submenu 3</a></li>
+								</ul>	
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><%= link_to UserDetail.find(current_user.id).first_name, edit_user_registration_path, :method => :get%></li>
+							<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
