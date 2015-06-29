@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'user_details/show'
+
+  get 'user_details/edit'
+
   devise_for :users, controllers: { sessions: "users/sessions" }
   # Resources
   resources :articles do
@@ -67,4 +71,5 @@ Rails.application.routes.draw do
   devise_scope :user do
     delete "/logout" => "devise/sessions#destroy"
   end
+  match ':controller(/:action(/:id))', :via => [:get,:post]
 end
