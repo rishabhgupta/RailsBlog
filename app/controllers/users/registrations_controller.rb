@@ -1,7 +1,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
-
+  def after_sign_up_path_for(resource)
+    '/user_details/new'
+  end
   # GET /resource/sign_up
   # def new
   #   super

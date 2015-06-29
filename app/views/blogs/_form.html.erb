@@ -1,0 +1,34 @@
+<%= form_for(:blog, :url => {:action => 'create', :id => current_user.id}) do |f| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h4>
+        <%= pluralize(@blog.errors.count, "error") %> prohibited
+        this blog from being saved:
+      </h4>
+      <ul>
+        <% @blog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'form-control' %>
+  </p>
+ 
+  <p>
+    <%= f.label :subtitle %><br>
+    <%= f.text_field :subtitle, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description, :size => "10x2", class: "form-control" %>
+  </p>
+
+  <p>
+    <%= f.submit class: 'btn btn-success'%>
+  </p>
+ 
+<% end %>

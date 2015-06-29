@@ -1,0 +1,12 @@
+<% @page_title = "Blog - Edit" %>
+<%= render 'application/nav'%>
+<%= render 'articles/header'%>
+    <p>Editing:<%= @blog.name%></p>
+  </div>
+</div>
+<div class="col-sm-12">
+  <div class="container">
+	<%= render 'form_update' %>
+	<%= link_to 'Back', {:action => 'show'} %>
+  </div>
+ </div>

@@ -7,7 +7,8 @@
 <div class="col-sm-12">
   <div class="container">
     <p>
-      <%= link_to 'New Article' , new_article_path %>
+      <%= link_to 'New Article' , new_article_path %> | 
+      <%= link_to('Blog Settings', {:controller => 'blogs', :action => 'show', :id => params[:id]}) %>
     </p>
     <table class="table-active table">
       <tr>

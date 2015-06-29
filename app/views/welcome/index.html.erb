@@ -1,7 +1,7 @@
 <%= javascript_include_tag "application" %>
 <%= render 'application/nav'%>
 <%= render 'articles/header'%>
-    <p>Welcome</p>
+    <p>Blog for Technocrats</p>
   </div>
 </div>
 <div class="container">
@@ -17,7 +17,7 @@
 	        <tr>
 	          <td><%= article.title %></td>
 	          <td><%= truncate(article.text, :length => 100)%></td>
-	          <td><%= link_to 'Show', {:action => 'show', :id => article.id}, class: 'btn btn-default' %></td>
+	          <td><%= link_to 'Read', {:action => 'show', :id => article.id}, class: 'btn btn-default' %></td>
 	        </tr>
 	      <% end %>
     </table>

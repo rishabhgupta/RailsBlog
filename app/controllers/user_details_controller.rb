@@ -17,6 +17,21 @@ class UserDetailsController < ApplicationController
 	  end
   end
 
+  def new
+  	@user = UserDetail.new
+  end
+
+  def create
+  	@user = User.find(params[:id])
+  	@user_details = UserDetail.new(user_detail_params)
+		# @article.converter_uppercase
+  	if @user.user_detail = @user_details
+    	redirect_to ({:controller => 'blogs', :action => 'new'})
+  	else
+    	render 'new'
+  	end
+  end
+
   private
 	  def user_detail_params
 	  	params.require(:user).permit(:first_name, :last_name, :age, :username)
