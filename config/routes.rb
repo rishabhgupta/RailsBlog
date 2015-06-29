@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'user_details/show'
-
-  get 'user_details/edit'
 
   devise_for :users, controllers: { sessions: "users/sessions" }
   # Resources
