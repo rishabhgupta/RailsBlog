@@ -100,7 +100,7 @@ $('document').ready(function() {
 	  }
 	  else
 	  {
-	  	set_success("#email","")
+	  	set_success("#email"," ")
 	  }
 	});
 
