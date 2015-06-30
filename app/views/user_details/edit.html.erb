@@ -8,15 +8,15 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
-			<%=  form_for(:user, :url => {:action => 'update', :id => current_user.id}) do |f| %>
-			  <% if @user.errors.any? %>
+			<%=  form_for(:user_details, :url => {:action => 'update', :id => current_user.id}) do |f| %>
+			  <% if @user_details.errors.any? %>
 			    <div id="error_explanation" class="alert alert-danger">
 			      <h4>
-			        <%= pluralize(@article.errors.count, "error") %> prohibited
+			        <%= pluralize(@user_details.errors.count, "error") %> prohibited
 			        this user from being saved:
 			      </h4>
 			      <ul>
-			        <% @user.errors.full_messages.each do |msg| %>
+			        <% @user_details.errors.full_messages.each do |msg| %>
 			          <li><%= msg %></li>
 			        <% end %>
 			      </ul>

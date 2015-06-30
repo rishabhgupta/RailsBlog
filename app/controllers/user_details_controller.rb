@@ -4,14 +4,14 @@ class UserDetailsController < ApplicationController
   end
 
   def edit
-  	@user = UserDetail.find_by_user_id(params[:id])
+  	@user_details = UserDetail.find_by_user_id(params[:id])
   end
 
   def update
-  	@user = User.find(params[:id])
-  	@user_details= @user.user_detail
-	  if @user_details.update(user_detail_params)
-	    redirect_to({:action => 'show', :id => @user.id})
+  	user = User.find(params[:id])
+  	@user_details= user.user_detail
+	  if @user_details.update_attributes(user_detail_params)
+	    redirect_to({:action => 'show', :id => user.id})
 	  else
 	    render 'edit'
 	  end
@@ -34,7 +34,7 @@ class UserDetailsController < ApplicationController
 
   private
 	  def user_detail_params
-	  	params.require(:user).permit(:first_name, :last_name, :age, :username)
+	  	params.require(:user_details).permit(:first_name, :last_name, :age, :username)
 	  end
 
 end
