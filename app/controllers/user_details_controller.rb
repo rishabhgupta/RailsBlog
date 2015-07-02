@@ -26,6 +26,7 @@ class UserDetailsController < ApplicationController
   	@user_details = UserDetail.new(user_detail_params)
 		# @article.converter_uppercase
   	if @user.user_detail = @user_details
+      #UserMailer.welcome_email(@user).deliver_later
     	redirect_to ({:controller => 'blogs', :action => 'new'})
   	else
     	render 'new'
@@ -34,7 +35,7 @@ class UserDetailsController < ApplicationController
 
   private
 	  def user_detail_params
-	  	params.require(:user_details).permit(:first_name, :last_name, :age, :username)
+	  	params.require(:user).permit(:first_name, :last_name, :age, :username)
 	  end
 
 end
