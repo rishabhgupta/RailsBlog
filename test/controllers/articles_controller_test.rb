@@ -24,4 +24,10 @@ class ArticlesControllerTest < ActionController::TestCase
     end
   end
 
+  test "should get index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:articles)
+  end
+
 end
