@@ -1,0 +1,21 @@
+<% @page_title = "Blog - Settings" %>
+<%= render 'application/nav'%>
+<%= render 'articles/header'%>
+    <p><%= @blog.name %></p>
+  </div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+
+			<p><strong>Name:</strong> <%= @blog.name %></p>
+			<p><strong>Subtitle:</strong> <%= @blog.subtitle %></p>
+			<p><strong>Description:</strong><br><%= @blog.description %></p>
+			<p><strong>Created:</strong> <%= @blog.created_at %></p>
+			<p><strong>Last Updated:</strong> <%= @blog.updated_at %></p>
+			<%= link_to 'Back', {:controller => "articles", :action => "index"} %> | 
+			<%= link_to 'Edit', {:controller => "blogs", :action => "edit", :id => @blog.id} %>
+		</div>
+		<div class="col-sm-6"></div>
+	</div>
+</div>

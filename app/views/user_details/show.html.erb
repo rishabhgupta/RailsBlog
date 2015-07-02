@@ -1,0 +1,23 @@
+<% @page_title = "Article" %>
+<%= render 'application/nav'%>
+<%= render 'articles/header'%>
+    <p><%= @user.user_detail.username %></p>
+  </div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8">
+			<%= link_to("Edit", {:action => "edit", :id => @user.id}) %>
+			<h4>Profile</h4>
+			<p>Username: <%= @user.user_detail.username %></p>
+			<p>Email: <%= @user.email %></p>
+			<p>First Name: <%= @user.user_detail.first_name %></p>
+			<p>Last Name: <%= @user.user_detail.last_name %></p>
+			<p>Age: <%= @user.user_detail.age %></p>
+			<p>Created At: <%= @user.user_detail.created_at %> </p>
+			<p>Last Updated: <%= @user.user_detail.updated_at %> </p>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+</div>

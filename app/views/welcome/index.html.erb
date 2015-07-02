@@ -1,10 +1,26 @@
- <%= javascript_include_tag "application" %>
+<%= javascript_include_tag "application" %>
+<%= render 'application/nav'%>
 <%= render 'articles/header'%>
-    <p>Welcome</p>
+    <p>Blog for Technocrats</p>
   </div>
 </div>
-<div class="col-sm-12">
-  <div class="container">
-  	<%= link_to 'My Blog', controller: 'articles' %>
-  </div>
- </div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+	    <table class="table-active table">
+	      <tr>
+	        <th>Title</th>
+	        <th>Article</th>
+	        <th colspan="1"></th>
+	      </tr>
+	      <% @articles.each do |article| %>
+	        <tr>
+	          <td><%= article.title %></td>
+	          <td><%= truncate(article.text, :length => 100)%></td>
+	          <td><%= link_to 'Read', {:action => 'show', :id => article.id}, class: 'btn btn-default' %></td>
+	        </tr>
+	      <% end %>
+    </table>
+		</div>
+	</div>
+</div>
