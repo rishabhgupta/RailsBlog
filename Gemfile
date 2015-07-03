@@ -7,6 +7,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 # Cancan
 gem 'cancan'
+# Pundit
+gem "pundit"
 # Delayed Job
 gem 'delayed_job_active_record'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
