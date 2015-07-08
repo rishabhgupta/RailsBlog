@@ -8,4 +8,6 @@ class Article < ActiveRecord::Base
 	# 	self.title.touppercase
 	# 	save!
 	# end
+	extend FriendlyId
+  friendly_id :title
 end

@@ -5,18 +5,18 @@ class ArticlesController < ApplicationController
 		@article = Article.new
 	end
 	def index
-		@articles = Blog.find(session[:blog_id]).articles
+		@articles = Blog.friendly.find(session[:blog_id]).articles
 	end
 	def edit
-		@article = Article.find(params[:id])
+		@article = Article.friendly.find(params[:id])
 	end
 	def show
-		@article = Article.find(params[:id])
+		@article = Article.friendly.find(params[:id])
 	end
 
 	def create
 	 @article = Article.new(article_params)
-	 @blog = Blog.find(session[:blog_id])
+	 @blog = Blog.friendly.find(session[:blog_id])
 	 # @article.converter_uppercase
 	  	if @blog.articles << @article
 	    	redirect_to @article
@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def update
-	  @article = Article.find(params[:id])
+	  @article = Article.friendly.find(params[:id])
 	 
 	  if @article.update(article_params)
 	    redirect_to article_path(@article)
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def destroy
-		@article = Article.find(params[:id])
+		@article = Article.friendly.find(params[:id])
 		@article.destroy
 
 		render 'index'

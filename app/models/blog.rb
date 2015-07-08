@@ -6,4 +6,7 @@ class Blog < ActiveRecord::Base
 	validates :name, presence: true, length: { within: 5..15 }
 	validates :subtitle, presence: true, length: { within: 10..70 }
 	validates :description, presence: true 
+
+	extend FriendlyId
+  friendly_id :name
 end
