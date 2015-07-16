@@ -26,7 +26,7 @@ class UserDetailsController < ApplicationController
   	@user_details = UserDetail.new(user_detail_params)
 		# @article.converter_uppercase
   	if @user.user_detail = @user_details
-      UserMailer.delay.welcome_email(@user)
+      UserMailer.welcome_email(@user)
     	redirect_to ({:controller => 'blogs', :action => 'new'})
   	else
     	render 'new'

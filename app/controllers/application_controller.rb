@@ -7,13 +7,15 @@ class ApplicationController < ActionController::Base
   def to_integer(s='0')
   	s.to_i
   end
+
   def after_sign_in_path_for(resource)
-		"/user_details/new"
+		"/welcome/index"
 	end
+
 	def after_sign_up_path_for(resource)
 		"/user_details/new"
 	end
-	def after_inactive_sign_up_path_for(resource)
-		"/user_details/new"
+	def after_sign_out_path_for(resource)
+		"/users/sign_in"
 	end
 end
