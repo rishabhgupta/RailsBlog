@@ -1,1 +1,1 @@
-Persnal Blog: Using Ruby on Rails
+Personal Blog: Using Ruby on Rails
