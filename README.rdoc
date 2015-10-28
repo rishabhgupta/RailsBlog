@@ -1,2 +1,2 @@
-# Pernal Blog
+#Persnal Blog
 Using Ruby on Rails
